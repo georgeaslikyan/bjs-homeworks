@@ -3,10 +3,20 @@ function getResult(a,b,c){
     // return x;
 }
 
-function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    // return averageMark;
-}
+function getAverageMark(marks) {
+    if (marks.length == 0) {
+      return marks.length;
+    } else if (marks.length > 5) {
+       let slice = marks.slice(0, 5);
+       let sum = 0;
+       for(let i = 0; i < slice.length; i++){
+         sum += slice[i];
+         console.log(sum)
+       }
+       
+      }
+    };
+  
 
 function askDrink(name,dateOfBirthday){
     // код для задачи №3 писать здесь
