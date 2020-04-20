@@ -1,24 +1,41 @@
-function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    // return x;
-}
+  "use strict"
 
-function getAverageMark(marks) {
-    if (marks.length == 0) {
-      return marks.length;
-    } else if (marks.length > 5) {
-       let slice = marks.slice(0, 5);
-       let sum = 0;
-       for(let i = 0; i < slice.length; i++){
-         sum += slice[i];
-         console.log(sum)
-       }
-       
-      }
+  function getResult(a,b,c) {
+    const disc = (Math.pow(b, 2) - (4 * a * c));
+    if (disc === 0) {
+    const x = -b / (2 * a);
+    return [x];
+    }else if (disc > 0) {
+    const x1 = ((-b + Math.sqrt(disc)) / (2 * a));
+    const x2 = ((-b - Math.sqrt(disc)) / (2 * a));
+    return [x1, x2];
     };
-  
+    return [];
+    };
 
-function askDrink(name,dateOfBirthday){
-    // код для задачи №3 писать здесь
-    // return result;
-}
+
+    function getAverageMark(marks){
+        const length = marks.length;
+        if (length === 0) return length;
+        const newMarks = marks.slice(0, 5);
+        const newLength = newMarks.length;
+        let sum = 0;
+        for (let i = 0; i < newLength; i++) {
+        sum += newMarks[i];
+        }
+        return sum / newLength;
+        };
+
+
+
+
+        function askDrink(name,dateOfBirthday){
+            const date = new Date;
+            let userYear = date.getFullYear() - dateOfBirthday;
+          
+            if(userYear >= 18) {
+              return `Не желаете ли олд-фэшн, ${name}?`;
+            } else {
+              return`Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+            }
+          }
