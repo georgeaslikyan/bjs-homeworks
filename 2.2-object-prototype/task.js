@@ -13,12 +13,14 @@ function getAnimalSound(animal) {
     } else {
       let sum = 0;
       for (let i = 0; i < marks.length; i++) {
-        let average = (sum += marks[i]);
-        let roundedAverage = Math.floor(average);
-        return roundedAverage;
+        sum += parseInt(marks[i]);
+        let average = sum;
       }
+      let roundedAverage = Math.floor(sum / marks.length);
+      return roundedAverage;
     }
-  };
+  }
+  
   
   
 
